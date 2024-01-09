@@ -1,7 +1,19 @@
-import {Outlet} from "react-router-dom"
-/* outlet - other dynamic content */
-const Layout = () => {
- return <div><Outlet/></div>
-}
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
-export default Layout
+const Layout = () => {
+  return (
+    <div className="max-w-screen-xl mx-auto h-screen px-4">
+      <div className="">
+        <Header />
+        <main className="">
+          <Outlet />
+        </main>
+      </div>
+      {/* <Footer /> */}
+    </div>
+  );
+};
+
+export default Layout;
