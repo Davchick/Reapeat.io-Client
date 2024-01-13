@@ -4,14 +4,16 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="max-w-screen-xl mx-auto h-screen px-4">
-      <div className="">
+    <div className="container flex flex-col h-screen">
+      {/* HEADER & MAIN */}
+      <div className="flex-[1_0_auto]">
         <Header />
-        <main className="">
+        <main>
           <Outlet />
         </main>
       </div>
-      {/* <Footer /> */}
+      {/* FOOTER */}
+      <Footer />
     </div>
   );
 };

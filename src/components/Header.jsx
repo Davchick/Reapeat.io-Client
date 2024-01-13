@@ -4,10 +4,10 @@ import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between h-16 border-b border-text/5">
+    <header className="flex items-center justify-between h-16 border-b border-border mb-20">
       <div className="flex items-center space-x-36">
         {/* LOGOTYPE */}
-        <div className="text-[22px]">
+        <div className="text-2xl">
           <Link to="/" className="">
             Repeat<span className="text-primary">.io</span>
           </Link>
