@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ForgotPassword from "./pages/ForgotPassword";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Collections from "./pages/Collections";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
@@ -26,6 +28,7 @@ const App = () => {
           <Route index element={<Home />} />
         </Route>
       </Routes>
+      <ToastContainer limit={2} />
     </BrowserRouter>
   );
 };

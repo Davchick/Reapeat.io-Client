@@ -1,11 +1,21 @@
 import { useState } from "react";
 
-const FormInput = ({ type, label, name }) => {
+const FormInput = ({ type, label, name, error, register }) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="form-input">
-      <input className="" type={showPassword === false ? type : "text"} name={name} />
+      {/* INPUT */}
+      <input
+        className=""
+        type={showPassword === false ? type : "text"}
+        name={name}
+        {...register}
+      />
+      {/* LABEL */}
       <span className="">{label}</span>
+      {/* ERROR MESSAGE */}
+      {error && <p className="ml-2 mt-1 text-sm text-warning">{error}</p>}
+      {/* PASSWORD ICON */}
       {type === "password" ? (
         showPassword === false ? (
           <svg
