@@ -13,9 +13,9 @@ export const ValidationSchema = yup.object().shape({
     .required("Password is a required field"),
   username: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
-    .max(40, "Password must be at most 40 characters")
-    .required("Password is a required field"),
+    .min(6, "Username must be at least 6 characters")
+    .max(40, "Username must be at most 40 characters")
+    .required("Username is a required field"),
   confirmPassword: yup
     .string()
     .required("Confirm password is a required field")
