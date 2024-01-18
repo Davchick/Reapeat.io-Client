@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BurgerMenu from "../UI/BurgerMenu";
+import BurgerMenu from "./BurgerMenu";
 import Navigation from "./Navigation";
 
 const Header = () => {
@@ -16,14 +16,18 @@ const Header = () => {
         {/* NAVIGATION */}
         <Navigation />
       </div>
-      {/* BUTTONS */}
-      <div className="flex gap-6 items-center">
-        <Link to="/login" className="link">
-          Log in
-        </Link>
-        <Link to="/register" className="btn">
-          Register
-        </Link>
+      <div className="flex items-center  space-x-5">
+        {/* BUTTONS */}
+        <div className="flex gap-6 items-center">
+          <Link to="/login" className="link">
+            Log in
+          </Link>
+          <Link to="/register" className="btn">
+            Register
+          </Link>
+        </div>
+        {/* BURGER MENU */}
+        <BurgerMenu />
       </div>
     </header>
   );

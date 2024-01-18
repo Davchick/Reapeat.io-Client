@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-secondary border-t border-border flex-[0_0_auto]">
+    <div className="bg-secondary border-t border-border mt-20">
      <div className="container">
         {/* FOOTER CONTENT */}
         <div className="text-2xl">

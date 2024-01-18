@@ -56,6 +56,12 @@
   .title {
     @apply text-2xl;
   }
+  .burger {
+    @apply flex flex-col justify-center w-9 cursor-pointer space-y-[5px] h-9 z-30 bg-bg rounded p-1;
+  }
+  .burger span {
+    @apply block h-[2px] bg-text rounded-xl transition-all;
+  }
   .form-input {
     @apply relative;
   }
