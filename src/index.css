@@ -41,7 +41,7 @@
 
 @layer base {
   body {
-    @apply font-poppins bg-bg text-text;
+    @apply font-poppins bg-bg text-text text-[15px] sm:text-base;
   }
   input {
     @apply !outline-none !appearance-none;
@@ -51,13 +51,13 @@
 /* UI elements */
 @layer components {
   .btn {
-    @apply bg-primary text-white py-2 px-5 rounded-3xl bg-gradient-to-tr from-accent transition-colors duration-500;
+    @apply bg-primary text-white py-2 px-4 sm:px-5 rounded-3xl bg-gradient-to-tr from-accent transition-colors duration-500;
   }
   .title {
     @apply text-2xl;
   }
   .burger {
-    @apply flex flex-col justify-center w-9 cursor-pointer space-y-[5px] h-9 z-30 bg-bg rounded p-1;
+    @apply lg:hidden flex flex-col justify-center w-9 cursor-pointer space-y-[5px] h-9 z-30 bg-bg rounded p-1;
   }
   .burger span {
     @apply block h-[2px] bg-text rounded-xl transition-all;

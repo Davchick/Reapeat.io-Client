@@ -31,7 +31,7 @@ const BurgerMenu = () => {
       <nav
         className={
           isOpen === true
-            ? "absolute !flex flex-col border-r z-20 border-border -left-5 top-0 bg-bg w-1/2 h-screen space-y-6 p-8"
+            ? "absolute text-base !flex flex-col border-r z-20 border-border -left-5 top-0 bg-bg w-1/2 h-screen space-y-6 p-8"
             : "hidden"
         }
       >

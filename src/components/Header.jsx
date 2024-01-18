@@ -16,9 +16,9 @@ const Header = () => {
         {/* NAVIGATION */}
         <Navigation />
       </div>
-      <div className="flex items-center  space-x-5">
+      <div className="flex items-center space-x-3 sm:space-x-5">
         {/* BUTTONS */}
-        <div className="flex gap-6 items-center">
+        <div className="flex sm:gap-6 gap-3 items-center">
           <Link to="/login" className="link">
             Log in
           </Link>
