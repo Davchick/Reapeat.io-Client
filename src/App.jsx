@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,6 +10,7 @@ import Register from "./pages/Register";
 import WordList from "./pages/WordList";
 import Practice from "./pages/Practice";
 import Friends from "./pages/Friends";
+import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 
@@ -23,6 +25,9 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/friends" element={<Friends />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
           <Route index element={<Home />} />

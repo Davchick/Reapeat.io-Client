@@ -1,15 +1,16 @@
-import { Link, useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
+import { signInSuccess, signInFailure } from "../redux/user/userSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ky from "ky";
 
 const Login = () => {
+  const { error } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     mode: "onBlur",
   });
 
@@ -23,7 +24,7 @@ const Login = () => {
       const res = await BASE_URL.post("auth/login", {
         json: data,
       }).json();
-      console.log(res);
+      dispatch(signInSuccess(res));
 
       toast.update(loading, {
         render: "You logged in successfully",
@@ -35,7 +36,6 @@ const Login = () => {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
-        theme: "light",
       });
       navigate("/");
     } catch (err) {
@@ -87,7 +87,9 @@ const Login = () => {
               required: "Password is a required field",
             })}
           />
-          <Link to="/forgot" className="hover:underline text-accent self">Forgot Password?</Link>
+          <Link to="/forgot" className="hover:underline text-accent self">
+            Forgot Password?
+          </Link>
           <button className="btn w-full rounded-md py-3" type="submit">
             Submit
           </button>
