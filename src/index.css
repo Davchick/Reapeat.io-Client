@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* COMMON VARIABLES */
-    --color-primary: 103 63 215;
+    --color-primary: 123 86 225;
     --color-warning: 221 188 73;
     --color-success: 62 180 102;
     --color-danger: 195 46 46;
@@ -51,7 +51,7 @@
 /* UI elements */
 @layer components {
   .btn {
-    @apply bg-primary text-white py-2 px-4 sm:px-5 rounded-3xl bg-gradient-to-tr from-accent transition-colors duration-500;
+    @apply bg-primary text-white py-2 px-4 sm:px-5 rounded-3xl bg-gradient-to-tr from-accent transition-colors duration-1000;
   }
   .title {
     @apply text-2xl;
@@ -74,12 +74,24 @@
   .form-input svg {
     @apply absolute top-4 right-5 cursor-pointer;
   }
+  .icon-item {
+    @apply relative w-full h-12 border border-accent rounded cursor-pointer duration-500;
+  }
+  .icon-item img {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 lg:w-[26px];
+  }
 }
 
 @layer utilities {
   /* COMMON EFFECTS */
   .link.active {
     @apply text-white after:hidden p-3 bg-primary bg-gradient-to-tr from-accent rounded-md transition-colors duration-500;
+  }
+  .active-tab {
+    @apply border-b-2 border-accent rounded;
+  }
+  .active-tab svg {
+    @apply text-accent;
   }
   /* HOVER EFFECTS */
   @media (hover: hover) {
@@ -91,6 +103,9 @@
     }
     .link.active {
       @apply hover:bg-gradient-to-tl hover:bg-accent hover:from-primary;
+    }
+    .icon-item {
+      @apply hover:bg-primary/60 hover:border-bg;
     }
   }
   /* ABSOLUTE CENTERING */

@@ -1,12 +1,15 @@
 import { ValidationSchema } from "../utils/formValidation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link, useNavigate } from "react-router-dom";
+import { logIn } from "../redux/user/userSlice"
 import FormInput from "../components/FormInput";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ky from "ky";
 
 const Register = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const {
     register,
@@ -28,6 +31,8 @@ const Register = () => {
         json: data,
       }).json();
       console.log(res);
+
+      dispatch(logIn(res));
 
       toast.update(loading, {
         render: "Account created successfully",
@@ -121,6 +126,26 @@ const Register = () => {
             Log in
           </Link>
         </p>
+
+        {/* REGISTER VIA ... */}
+        <div className=" text-center text-sm mt-5">
+          <div className="relative">
+            <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent -z-10"></span>
+            <p className="inline-block bg-bg px-4">Or register with</p>
+          </div>
+          <div className="flex gap-4 pt-8">
+            <div type="button" className="icon-item">
+              <img src="./icons/vk.svg" alt="Register via vk" />
+            </div>
+            <div type="button" className="icon-item">
+              <img src="./icons/google.svg" alt="Register via vk" />
+            </div>
+            <div type="button" className="icon-item">
+              <img src="./icons/fb.svg" alt="Register via facebook" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

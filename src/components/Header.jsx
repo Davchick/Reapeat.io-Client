@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
-    <header className="flex items-center justify-between h-16 border-b border-border mb-20">
+    <header className="flex items-center justify-between h-16 border-b border-border mb-10">
       <div className="flex items-center space-x-36">
         {/* LOGOTYPE */}
         <div className="text-2xl">

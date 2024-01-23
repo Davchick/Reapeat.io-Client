@@ -1,13 +1,12 @@
 import FormInput from "../components/FormInput";
-import { signInSuccess, signInFailure } from "../redux/user/userSlice";
+import { logIn } from "../redux/user/userSlice";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ky from "ky";
 
 const Login = () => {
-  const { error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm({
@@ -24,7 +23,7 @@ const Login = () => {
       const res = await BASE_URL.post("auth/login", {
         json: data,
       }).json();
-      dispatch(signInSuccess(res));
+      dispatch(logIn(res));
 
       toast.update(loading, {
         render: "You logged in successfully",
@@ -103,6 +102,26 @@ const Login = () => {
             Sign up
           </Link>
         </p>
+
+        {/* LOGIN VIA ... */}
+        <div className=" text-center text-sm mt-5">
+          <div className="relative">
+            <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent -z-10"></span>
+            <p className="inline-block bg-bg px-4">Or log in with</p>
+          </div>
+          <div className="flex gap-4 pt-8">
+            <div type="button" className="icon-item">
+              <img src="./icons/vk.svg" alt="Login via vk" />
+            </div>
+            <div type="button" className="icon-item">
+              <img src="./icons/google.svg" alt="Login via vk" />
+            </div>
+            <div type="button" className="icon-item">
+              <img src="./icons/fb.svg" alt="Login via facebook" />
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   );
