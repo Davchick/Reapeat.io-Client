@@ -106,7 +106,7 @@ const Login = () => {
         {/* LOGIN VIA ... */}
         <div className=" text-center text-sm mt-5">
           <div className="relative">
-            <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent -z-10"></span>
+            <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent/70 -z-10"></span>
             <p className="inline-block bg-bg px-4">Or log in with</p>
           </div>
           <div className="flex gap-4 pt-8">

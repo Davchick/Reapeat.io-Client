@@ -75,7 +75,7 @@
     @apply absolute top-4 right-5 cursor-pointer;
   }
   .icon-item {
-    @apply relative w-full h-12 border border-accent rounded cursor-pointer duration-500;
+    @apply relative w-full h-12 border border-accent/70 rounded cursor-pointer duration-500;
   }
   .icon-item img {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 lg:w-[26px];
