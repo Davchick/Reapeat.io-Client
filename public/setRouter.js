@@ -4,8 +4,10 @@ import express from "express";
 const app = express();
 const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, "../../dist")));
+app.use(express.static(__dirname));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
+
+console.log(__dirname);
