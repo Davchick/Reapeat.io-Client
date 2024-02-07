@@ -50,7 +50,7 @@ const Register = () => {
     } catch (err) {
       console.log(err.message);
       toast.update(loading, {
-        render: err.message,
+        render: "Something went wrong",
         type: "error",
         isLoading: false,
         autoClose: 3000,
@@ -127,8 +127,8 @@ const Register = () => {
           </Link>
         </p>
 
-        {/* REGISTER VIA ... */}
-        <div className=" text-center text-sm mt-5">
+        {/* REGISTER VIA ... (TEMPORARILY UNAVAILABLE)*/}
+        {/* <div className=" text-center text-sm mt-5">
           <div className="relative">
             <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent -z-10"></span>
             <p className="inline-block bg-bg px-4">Or register with</p>
@@ -144,7 +144,7 @@ const Register = () => {
               <img src="./icons/fb.svg" alt="Register via facebook" />
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </div>

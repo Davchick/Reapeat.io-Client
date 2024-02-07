@@ -17,12 +17,14 @@ const Login = () => {
     prefixUrl: import.meta.env.VITE_BASE_URL,
   });
 
-  const onLogin = async (data) => {
+   const onLogin = async (data) => {
     const loading = toast.loading("Please wait...");
     try {
       const res = await BASE_URL.post("auth/login", {
         json: data,
+        
       }).json();
+
       dispatch(logIn(res));
 
       toast.update(loading, {
@@ -38,9 +40,9 @@ const Login = () => {
       });
       navigate("/");
     } catch (err) {
-      console.log(err);
-      toast.update(loading, {
-        render: err.message,
+      if (err.message.includes(401)) {
+         toast.update(loading, {
+        render: "Invalid credentials",
         type: "error",
         isLoading: false,
         autoClose: 3000,
@@ -51,6 +53,34 @@ const Login = () => {
         draggable: true,
         theme: "light",
       });
+      } else if (err.message.includes(500)) {
+        toast.update(loading, {
+        render: "Error on server side..",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        hideProgressBar: false,
+        pauseOnFocusLoss: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "light",
+      });
+      } else {
+        toast.update(loading, {
+        render: "Something went wrong..",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        hideProgressBar: false,
+        pauseOnFocusLoss: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "light",
+      });
+      }
+     
     }
   };
 
@@ -103,8 +133,8 @@ const Login = () => {
           </Link>
         </p>
 
-        {/* LOGIN VIA ... */}
-        <div className=" text-center text-sm mt-5">
+        {/* LOGIN VIA ... (TEMPORARILY UNAVAILABLE)*/}
+        {/* <div className=" text-center text-sm mt-5">
           <div className="relative">
             <span className="absolute left-0 top-1/2 block h-[1px] w-full bg-accent/70 -z-10"></span>
             <p className="inline-block bg-bg px-4">Or log in with</p>
@@ -120,8 +150,7 @@ const Login = () => {
               <img src="./icons/fb.svg" alt="Login via facebook" />
             </div>
           </div>
-        </div>
-        
+        </div> */}
       </div>
     </div>
   );

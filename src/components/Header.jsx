@@ -23,7 +23,7 @@ const Header = () => {
         {currentUser ? (
           <Link to="/profile" className="cursor-pointer flex items-center space-x-2 md:space-x-3" >
             <span className="text-[17px]">{currentUser.username}</span>
-            <img className="h-11 md:h-12 rounded-full" src="./avatar.png" alt="" />
+            <img className="h-11 md:h-12 rounded-full" src={currentUser.avatar} alt="" />
           </Link>
         ) : (
           <div className="flex sm:gap-6 gap-3 items-center">
