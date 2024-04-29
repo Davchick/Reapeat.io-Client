@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import ky from "ky";
+import Advertisement from "../components/Advertisement";
 
 const Register = () => {
   const dispatch = useDispatch()
@@ -64,14 +65,10 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex gap-y-20 flex-col-reverse  md:flex-row-reverse items-center justify-between w-full">
-      {/* IMAGE (here will be ad of repeat.io mobile application in the future)*/}
-      <img
-        className="w-10/12 md:w-5/12 rounded-[30px]"
-        src="./application.jpg"
-        alt="Mobile app of Repeat.io"
-      />
-
+    <div className="flex gap-y-20 flex-col-reverse md:flex-row items-center justify-between w-full">
+      
+      <Advertisement />
+      
       <div className="w-10/12 md:w-5/12">
         <div className="space-y-2 mb-14">
           <h1 className="title">Sign up</h1>

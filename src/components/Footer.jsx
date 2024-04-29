@@ -8,14 +8,14 @@ const Footer = () => {
         <div className="text-2xl">
           {/* LOGOTYPE */}
           <Link to="/" className="">
-            Repeat<span className="text-primary">.io</span>
+            Word<span className="text-primary">Keep</span>
           </Link>
           {/* CONTACTS */}
           {/* Interest links */}
         </div>
         {/* COPYRIGHT BLOCK */}
         <div className="border-t border-border text-center py-5">
-          <p>© 2024 Repeat.io. All rights reserved.</p>
+          <p>© 2024 WordKeep. All rights reserved.</p>
         </div>
      </div>
     </div>

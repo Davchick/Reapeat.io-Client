@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
-import Navigation from "./Navigation";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -11,12 +10,14 @@ const Header = () => {
         {/* LOGOTYPE */}
         <div className="text-2xl">
           <Link to="/" className="">
-            Repeat<span className="text-primary">.io</span>
+            Word<span className="text-primary">Keep</span>
           </Link>
         </div>
 
         {/* NAVIGATION */}
-        <Navigation />
+        
+        {/* Search bar */}
+        
       </div>
       <div className="flex items-center space-x-3 sm:space-x-5">
         {/* BUTTONS OR AVATAR*/}

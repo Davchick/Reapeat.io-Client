@@ -1,4 +1,5 @@
 import FormInput from "../components/FormInput";
+import Advertisement from "../components/Advertisement";
 import { logIn } from "../redux/user/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -85,13 +86,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex gap-y-20 md:flex-row flex-col-reverse items-center justify-between w-full">
-      {/* IMAGE (here will be ad of repeat.io mobile application in the future)*/}
-      <img
-        className="w-10/12 md:w-5/12 rounded-[30px]"
-        src="./application.jpg"
-        alt="Mobile app of Repeat.io"
-      />
+    <div className="flex gap-y-20  flex-col-reverse items-center justify-between w-full md:flex-row-reverse">
+      
+      <Advertisement/>
 
       <div className="w-10/12 md:w-5/12">
         <div className="space-y-2 mb-12">

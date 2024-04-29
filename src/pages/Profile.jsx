@@ -1,13 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logOut } from "../redux/user/userSlice.js";
 import { useRef } from "react";
 
 const Profile = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [activeTab, setActiveTab] = useState("Account");
+  const [file, setFile] = useState(null)
   const dispatch = useDispatch();
   const fileRef = useRef(null);
+  
+  useEffect(() => {
+    if (file) {
+      handleFileUpload(file)
+    }
+  }, [file])
+
+  const handleFileUpload = (file) => {
+    
+  }
 
   return (
     <div className="w-full">
@@ -41,7 +52,7 @@ const Profile = () => {
         </button>
         {/* AVATAR */}
         <div className="absolute -bottom-28 left-1/2 -translate-x-1/2 space-y-1 flex flex-col items-center">
-          <input type="file" ref={fileRef} accept="image/jpeg, image/png, image/avif" name="avatar" className="hidden"/>
+          <input type="file" ref={fileRef} onChange={(e) => setFile(e.target.files[0])} accept="image/jpeg, image/png, image/avif" name="avatar" className="hidden"/>
           <div
             className="cursor-pointer"
             onClick={() => fileRef.current.click()}
