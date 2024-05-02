@@ -12,18 +12,20 @@ const Advertisement = () => {
       />
       <div className="flex gap-7">
         <Link
-          to="#"
-          className="w-max flex gap-2 bg-accent text-white py-2 px-3 rounded-md transition-colors duration-1000"
+          target="_blank"
+          to="https://play.google.com/store/games?device=phone&hl=ru&gl=US"
+          className="w-max flex items-center gap-2 bg-accent text-white py-2 px-3 rounded-md transition-colors duration-1000"
         >
           Google Play
-          <GooglePlay/>
+          <GooglePlay />
         </Link>
         <Link
-          to="#"
-          className="w-max flex gap-2 bg-accent text-white py-2 px-3 rounded-md transition-colors duration-1000"
+          target="_blank"
+          to="https://apps.apple.com/ru/developer/apple/id284417353?mt=12"
+          className="w-max flex items-center gap-2 bg-accent text-white py-2 px-3 rounded-md transition-colors duration-1000"
         >
           App Store
-          <AppStore/>
+          <AppStore />
         </Link>
       </div>
     </div>
